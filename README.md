@@ -1,29 +1,28 @@
-  GRLB-Scara для cnc-shield.v4 Nanо  основаная на GRLB 0.9j.
+GRLB-Scara for cnc-shield.v4 Nano based on GRLB 0.9j.
 
-  Серво-привод управляется командой "M3 Sx" (x задает угол, изменяется: 0-1000) и "M5: на пине Z+. Для питания сервопривода рекомендуется использовать отдельное питание +5В, так как на плате cnc-shield v.4 нет отдельного стабилизатора напряжения, а используется встроенный в nano v3, не расчитанный под постоянную нагрузку серво-двигателя.
+The servo drive is controlled by the command "M3 Sx" (x sets the angle, changes: 0-1000) and "M5: on pin Z +. It is recommended to use a separate + 5V power supply for the servo drive, since there is no separate power supply on the cnc-shield v.4 board. voltage regulator, but the built-in nano v3 is used, which is not designed for a constant load of the servo motor.
 
-Добавлена возможность калибровки DrawBot командой "$M". Калибровка производиться из положения плеча под углом 45 градусов, при этом высчитываются и сохраняются параметры theta ($30) и psi ($31).
+Added the ability to calibrate DrawBot with the "$ M" command. Calibration is performed from a 45-degree shoulder position and theta ($ 30) and psi ($ 31) parameters are calculated and saved.
 
 [![Калибровка](https://github.com/akv47/DrawBot_nano/blob/main/pic/calibration.jpg)]
 
-Для компиляции необходимо использовать легкое и быстрое ядро GyverCore https://alexgyver.ru/gyvercore/ (разработаное AlexGyver и Egor 'Nich1con' Zaharov), так как на оригинальном ядре Nano_V3 (ATmega328p) размер бинарного файла превысит размер флеш-памяти контроллера. 
+For compilation, you need to use the light and fast core GyverCore https://alexgyver.ru/gyvercore/ (developed by AlexGyver and Egor 'Nich1con' Zaharov), since on the original Nano_V3 core (ATmega328p) the size of the binary file will exceed the size of the controller's flash memory.
 
 [![Смотреть демо](https://github.com/akv47/DrawBot_nano/blob/main/pic/video.jpg)](https://youtu.be/JfaiAnQvb0s)
 
-Добавлены параметры:
+Added parameters:
 
-$28=200.0 (Плечо руки со стороны шаговых  моторов)
+$ 28 = 200.0 (Shoulder of the arm from the side of the stepper motors)
 
-$29=200.0 (Плечо руки со стороны ручки)
+$ 29 = 200.0 (Shoulder of the arm from the side of the handle)
 
-$30=45.720 (Угол theta)
+$ 30 = 45.720 (angle theta)
 
-$31=92.030 (Угол psi)
+$ 31 = 92.030 (corner psi)
 
-После изменения параметров необходимо сбросить arduino аппаратно.
+After changing the parameters, you need to reset the arduino by hardware.
 
-
-Полный список параметров LaserGRBL:
+Complete list of LaserGRBL parameters:
 
 $0=10 (Step pulse time)
 
